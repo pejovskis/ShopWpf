@@ -1,11 +1,12 @@
 ﻿using Microsoft.Data.Sqlite;
+using SchuhLadenApp.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchuhLadenApp
+namespace SchuhLadenApp.Model
 {
     public class User
     {

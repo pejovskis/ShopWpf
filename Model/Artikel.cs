@@ -2,8 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using SchuhLadenApp.Controller;
 
-namespace SchuhLadenApp
+namespace SchuhLadenApp.Model
 {
     internal class Artikel
     {

@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1;
+using SchuhLadenApp.Model;
 
-namespace SchuhLadenApp
+namespace SchuhLadenApp.View
 {
     /// <summary>
     /// Interaction logic for ShowAllArticles.xaml

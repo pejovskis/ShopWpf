@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1;
 
-namespace SchuhLadenApp
+namespace SchuhLadenApp.View
 {
     /// <summary>
     /// Interaction logic for AdminMenu.xaml
