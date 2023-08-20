@@ -42,5 +42,10 @@ namespace SchuhLadenApp
                 gridArticleView.Items.Add(articleViewModel);
             }
         }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

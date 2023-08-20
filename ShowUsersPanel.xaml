@@ -21,7 +21,7 @@
                 <DataGridTextColumn Header="Account" Binding="{Binding Account}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnEditUser" Content="edit" HorizontalAlignment="Left" Margin="743,391,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnEditUser" Content="edit" HorizontalAlignment="Left" Margin="743,391,0,0" VerticalAlignment="Top" Click="btnEditUser_Click"/>
         <Button x:Name="btnBack" Content="back" HorizontalAlignment="Left" Margin="26,386,0,0" VerticalAlignment="Top"/>
 
     </Grid>
