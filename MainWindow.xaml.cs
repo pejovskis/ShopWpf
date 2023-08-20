@@ -34,7 +34,7 @@ namespace WpfApp1
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             string username = tbxUsername.Text;
-            string password = tbxPassword.Text;
+            string password = tbxPassword.Password;
 
             User user = new User(username, password);
             bool logInApproved = user.checkUserCredentials(username, password);
