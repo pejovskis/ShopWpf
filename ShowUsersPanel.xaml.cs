@@ -49,18 +49,26 @@ namespace SchuhLadenApp
         {
             if (gridShowUsers.SelectedItems.Count > 0)
             {
-                DataRowView rowView = (DataRowView)gridShowUsers.SelectedItems[0];
-                List<string> userInfo = new List<string>();
-
-                foreach (var cell in rowView.Row.ItemArray)
-                {
-                    userInfo.Add(cell.ToString());
-                }
+                UserViewModel selectedUser = (UserViewModel)gridShowUsers.SelectedItems[0];
+                List<string> userInfo = new List<string>
+            {
+                selectedUser.UserId,
+                selectedUser.Name,
+                selectedUser.Vorname,
+                selectedUser.Strasse,
+                selectedUser.Hausnummer,
+                selectedUser.Plz.ToString(),
+                selectedUser.Anstellungszeit,
+                selectedUser.Lohngehalt.ToString(),
+                selectedUser.UserStatus,
+                selectedUser.Account
+            };
 
                 EditUserInfo editUsersListCellForm = new EditUserInfo(userInfo);
                 editUsersListCellForm.userInfo = userInfo;
-                editUsersListCellForm.ShowDialog();
+                editUsersListCellForm.Show();
             }
         }
+
     }
 }

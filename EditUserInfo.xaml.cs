@@ -1,19 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace SchuhLadenApp
 {
+
+    public class UserInformation
+    {
+        public string Userid { get; set; }
+        public string Name { get; set; }
+        public string Vorname { get; set; }
+        public string Strasse { get; set; }
+        public string Hausnummer { get; set; }
+        public string Plz { get; set; }
+        public string Anstellungszeit { get; set; }
+        public string Lohngehalt { get; set; }
+        public string Userstatus { get; set; }
+        public string Account { get; set; }
+    }
+
+
     public partial class EditUserInfo : Window
     {
         public List<string> userInfo { get; set; } = new List<string>();
+        public ObservableCollection<UserInformation> Users { get; set; } = new ObservableCollection<UserInformation>();
+
 
         public EditUserInfo(List<string> userInfo)
         {
             this.userInfo = userInfo;
             InitializeComponent();
+
+            Users.Add(new UserInformation
+            {
+                Userid = userInfo[0],
+                Name = userInfo[1],
+                Vorname = userInfo[2],
+                Strasse = userInfo[3],
+                Hausnummer = userInfo[4],
+                Plz = userInfo[5],
+                Anstellungszeit = userInfo[6],
+                Lohngehalt = userInfo[7],
+                Userstatus = userInfo[8],
+                Account = userInfo[9]
+            });
+
+            DataContext = this; // Add this line
             generateUserGridView();
         }
 
@@ -31,19 +66,6 @@ namespace SchuhLadenApp
             gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Userstatus" });
             gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Account" });
 
-            gridEditUsercell.Items.Add(new
-            {
-                Userid = userInfo[0],
-                Name = userInfo[1],
-                Vorname = userInfo[2],
-                Strasse = userInfo[3],
-                Hausnummer = userInfo[4],
-                Plz = userInfo[5],
-                Anstellungszeit = userInfo[6],
-                Lohngehalt = userInfo[7],
-                Userstatus = userInfo[8],
-                Account = userInfo[9]
-            });
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)

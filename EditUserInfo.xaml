@@ -7,9 +7,21 @@
         mc:Ignorable="d"
         Title="EditUserInfo" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="gridEditUsercell" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,291"/>
+        <DataGrid x:Name="gridEditUsercell" ItemsSource="{Binding Users}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,291">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Userid" Binding="{Binding Userid}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Vorname" Binding="{Binding Vorname}" />
+                <DataGridTextColumn Header="Strasse" Binding="{Binding Strasse}" />
+                <DataGridTextColumn Header="Hausnummer" Binding="{Binding Hausnummer}" />
+                <DataGridTextColumn Header="Plz" Binding="{Binding Plz}" />
+                <DataGridTextColumn Header="Anstellungszeit" Binding="{Binding Anstellungszeit}" />
+                <DataGridTextColumn Header="Lohngehalt" Binding="{Binding Lohngehalt}" />
+                <DataGridTextColumn Header="Userstatus" Binding="{Binding Userstatus}" />
+                <DataGridTextColumn Header="Account" Binding="{Binding Account}" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="btnSave" Content="update user" HorizontalAlignment="Left" Margin="476,0,0,0" VerticalAlignment="Center"/>
         <Button x:Name="btnBack" Content="back" HorizontalAlignment="Left" Margin="272,212,0,0" VerticalAlignment="Top"/>
-
     </Grid>
 </Window>
