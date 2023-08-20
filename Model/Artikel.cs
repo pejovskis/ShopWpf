@@ -105,7 +105,7 @@ namespace SchuhLadenApp.Model
 
         }
 
-        public Artikel getExistingUser(string artikelIdInput)
+        public Artikel getExistingArticle(string artikelIdInput)
         {
             List<Artikel> artikels = retrieveArtikelFromDb();
 
@@ -166,6 +166,30 @@ namespace SchuhLadenApp.Model
                     command.Parameters.AddWithValue("@name", this.getName());
                     command.Parameters.AddWithValue("@lieferant", this.getLieferant());
                     command.Parameters.AddWithValue("@preis", this.getPreis());
+                    command.Parameters.AddWithValue("@menge", this.getMenge());
+
+                    command.ExecuteNonQuery(); // Execute the INSERT query
+                }
+                databaseHelper.CloseConnection(connection);
+            }
+        }
+
+        public void sellArticle(string ArtikelId)
+        {
+
+            this.Menge--;
+
+            string menge = this.Menge.ToString();
+
+            DatabaseHelper databaseHelper = new DatabaseHelper();
+
+            using (SqliteConnection connection = databaseHelper.OpenConnection())
+            {
+                string query = "UPDATE artikel SET menge=@menge " +
+                    "WHERE artikelid=@ArtikelId";
+
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
                     command.Parameters.AddWithValue("@menge", this.getMenge());
 
                     command.ExecuteNonQuery(); // Execute the INSERT query
