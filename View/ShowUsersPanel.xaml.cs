@@ -79,5 +79,10 @@ namespace SchuhLadenApp.View
             adminMenu.Show();
             this.Close();
         }
+
+        private void gridShowUsers_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
