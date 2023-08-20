@@ -1,0 +1,28 @@
+﻿<Window x:Class="SchuhLadenApp.ShowUsersPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchuhLadenApp"
+        mc:Ignorable="d"
+        Title="ShowUsersPanel" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="gridShowUsers">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="UserId" Binding="{Binding UserId}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Vorname" Binding="{Binding Vorname}"/>
+                <DataGridTextColumn Header="Strasse" Binding="{Binding Strasse}"/>
+                <DataGridTextColumn Header="Hausnummer" Binding="{Binding Hausnummer}"/>
+                <DataGridTextColumn Header="Plz" Binding="{Binding Plz}"/>
+                <DataGridTextColumn Header="Anstellungszeit" Binding="{Binding Anstellungszeit}"/>
+                <DataGridTextColumn Header="Lohngehalt" Binding="{Binding Lohngehalt}"/>
+                <DataGridTextColumn Header="Userstatus" Binding="{Binding Userstatus}"/>
+                <DataGridTextColumn Header="Account" Binding="{Binding Account}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnEditUser" Content="edit" HorizontalAlignment="Left" Margin="743,391,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnBack" Content="back" HorizontalAlignment="Left" Margin="26,386,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
