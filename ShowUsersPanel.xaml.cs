@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1;
 
 namespace SchuhLadenApp
 {
@@ -70,5 +71,11 @@ namespace SchuhLadenApp
             }
         }
 
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            AdminMenu adminMenu = new AdminMenu();
+            adminMenu.Show();
+            this.Close();
+        }
     }
 }

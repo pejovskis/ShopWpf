@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:SchuhLadenApp"
         mc:Ignorable="d"
         Title="AddNewArticle" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="0,0,0,-6">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Name:"/>
+            <TextBox x:Name="tbxName"/>
+            <Label Content="Supplier:"/>
+            <TextBox x:Name="tbxSupplier"/>
+            <Label Content="Price:"/>
+            <TextBox x:Name="tbxPrice"/>
+            <Label Content="Quantity:"/>
+            <TextBox x:Name="tbxQuantity"/>
+            <Button x:Name="btnAddNewArticle" Content="Add New Article" Click="btnAddNewUser_Click"/>
+            <Button x:Name="btnBack" Content="Back" Click="btnBack_Click"/>
+            <Label x:Name="lblStatus"/>
+        </StackPanel>
     </Grid>
 </Window>

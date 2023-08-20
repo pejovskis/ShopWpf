@@ -51,21 +51,6 @@ namespace SchuhLadenApp
             DataContext = this;
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-            if (gridEditUsercell.Items.Count > 0)
-            {
-                dynamic row = gridEditUsercell.Items[0];
-                User user = getUserInfo(row);
-                user.updateUser();
-                MessageBox.Show("User " + user.getVorname() + " updated successfully!");
-            }
-
-            ShowUsersPanel showUsersPanel = new ShowUsersPanel();
-            showUsersPanel.Show();
-            this.Close();
-        }
-
         private User getUserInfo(dynamic row)
         {
             string userid = row.Userid;
@@ -95,6 +80,35 @@ namespace SchuhLadenApp
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void btnSave_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (Users.Count > 0)
+            {
+                UserInformation userInformation = Users[0];
+                User user = new User(
+                    userInformation.Userid,
+                    userInformation.Name,
+                    userInformation.Vorname,
+                    userInformation.Strasse,
+                    userInformation.Hausnummer,
+                    Convert.ToInt32(userInformation.Plz),
+                    userInformation.Anstellungszeit,
+                    Convert.ToDouble(userInformation.Lohngehalt),
+                    userInformation.Userstatus,
+                    userInformation.Account
+                );
+
+                user.updateUser();
+                MessageBox.Show("User " + user.getVorname() + " updated successfully!");
+            }
+            this.Close();
+        }
+
+        private void btnBack_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

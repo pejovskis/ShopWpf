@@ -17,7 +17,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnEdit" Content="edit" HorizontalAlignment="Left" Margin="750,406,0,0" VerticalAlignment="Top" Click="btnEdit_Click"/>
-        <Button x:Name="btnBack" Content="back" HorizontalAlignment="Left" Margin="10,406,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnBack" Content="back" HorizontalAlignment="Left" Margin="10,406,0,0" VerticalAlignment="Top" Click="btnBack_Click"/>
 
     </Grid>
 </Window>
