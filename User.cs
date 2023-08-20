@@ -403,6 +403,16 @@ namespace SchuhLadenApp
             this.Hausnummer = Hausnummer;
         }
 
+        public void setStrasse(string Strasse)
+        {
+            this.Strasse = Strasse;
+        }
+
+        public void setPlz(int plz)
+        {
+            this.Plz = plz;
+        }
+
         public string concatinateAdresse()
         {
             return this.Adresse = Strasse + " " + this.Hausnummer + " " + this.Plz;

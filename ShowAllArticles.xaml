@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="ShowAllArticles" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="gridArticleView">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Article ID" Binding="{Binding ArtikelId}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Supplier" Binding="{Binding Lieferant}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Preis}"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Menge}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnEdit" Content="Button" HorizontalAlignment="Left" Margin="750,406,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnBack" Content="Button" HorizontalAlignment="Left" Margin="10,406,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

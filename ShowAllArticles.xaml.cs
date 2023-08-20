@@ -22,6 +22,25 @@ namespace SchuhLadenApp
         public ShowAllArticles()
         {
             InitializeComponent();
+            DataContext = this;
+            generateArticleGridView();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void generateArticleGridView()
+        {
+
+            List<ArticleViewModel> articleViewModels = Artikel.retrieveArtikelFromDb().Select(a => new ArticleViewModel(a)).ToList();
+
+            gridArticleView.Items.Clear();
+            foreach (ArticleViewModel articleViewModel in articleViewModels)
+            {
+                gridArticleView.Items.Add(articleViewModel);
+            }
         }
     }
 }

@@ -30,14 +30,12 @@ namespace SchuhLadenApp
         private void generateUserGridView()
         {
 
-            List<User> userList = User.retrieveUsersFromDb();
+            List<UserViewModel> userList = User.retrieveUsersFromDb().Select(u => new UserViewModel(u)).ToList();
 
             gridShowUsers.Items.Clear();
-
-            // Add users to the DataGrid
-            foreach (User user in userList)
+            foreach (UserViewModel userViewModel in userList)
             {
-                gridShowUsers.Items.Add(user);
+                gridShowUsers.Items.Add(userViewModel);
             }
         }
 
