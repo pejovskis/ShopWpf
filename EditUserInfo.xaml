@@ -8,6 +8,8 @@
         Title="EditUserInfo" Height="450" Width="800">
     <Grid>
         <DataGrid x:Name="gridEditUsercell" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,291"/>
+        <Button x:Name="btnSave" Content="update user" HorizontalAlignment="Left" Margin="476,0,0,0" VerticalAlignment="Center"/>
+        <Button x:Name="btnBack" Content="back" HorizontalAlignment="Left" Margin="272,212,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
