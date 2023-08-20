@@ -9,7 +9,7 @@
 
     <DockPanel>
         <Grid DockPanel.Dock="Top">
-            <DataGrid x:Name="gridEditUsercell" ItemsSource="{Binding Articles}" FontSize="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <DataGrid x:Name="gridEditUsercell" CanUserAddRows="False" ItemsSource="{Binding Articles}" FontSize="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <DataGrid.Columns>
                     <!-- Define your DataGrid columns here -->
                 </DataGrid.Columns>

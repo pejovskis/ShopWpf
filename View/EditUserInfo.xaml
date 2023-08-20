@@ -8,9 +8,8 @@
         Title="EditUserInfo" Height="450" Width="800">
     <DockPanel>
         <Grid DockPanel.Dock="Top">
-            <DataGrid x:Name="gridEditUsercell" ItemsSource="{Binding Users}" SelectionChanged="DataGrid_SelectionChanged" FontSize="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <DataGrid x:Name="gridEditUsercell" CanUserAddRows="False" ItemsSource="{Binding Users}" SelectionChanged="DataGrid_SelectionChanged" FontSize="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <DataGrid.Columns>
-                    <!-- Define your DataGrid columns here -->
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

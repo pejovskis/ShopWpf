@@ -82,11 +82,15 @@ namespace SchuhLadenApp.View
                 article.updateArticle();
                 MessageBox.Show("Article " + article.getName() + " updated successfully!");
             }
+            var showAllArticles = new ShowAllArticles();
+            showAllArticles.Show();
             this.Close();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
+            var showAllArticles = new ShowAllArticles();
+            showAllArticles.Show();
             this.Close();
         }
     }

@@ -25,7 +25,12 @@ namespace SchuhLadenApp.View
             InitializeComponent();
             if (MainWindow.LoggedInUser != null)
             {
-                lblLoggedInUser.Content = MainWindow.LoggedInUser.getStrasse();
+                lblLoggedInUser.Content = MainWindow.LoggedInUser.getName();
+                if(MainWindow.LoggedInUser.getUserStatus() != "admin")
+                {
+                    btnAddNewArticle.Visibility = Visibility.Hidden;
+                    btnAddNewUser.Visibility = Visibility.Hidden;
+                }
             }
             else
             {

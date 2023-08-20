@@ -104,11 +104,15 @@ namespace SchuhLadenApp.View
                 user.updateUser();
                 MessageBox.Show("User " + user.getVorname() + " updated successfully!");
             }
+            var showAllArticles = new ShowAllArticles();
+            showAllArticles.Show();
             this.Close();
         }
 
         private void btnBack_Click_1(object sender, RoutedEventArgs e)
         {
+            var showAllUsers = new ShowUsersPanel();
+            showAllUsers.Show();
             this.Close();
         }
     }

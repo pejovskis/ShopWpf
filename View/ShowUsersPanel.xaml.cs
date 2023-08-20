@@ -69,6 +69,7 @@ namespace SchuhLadenApp.View
                 EditUserInfo editUsersListCellForm = new EditUserInfo(userInfo);
                 editUsersListCellForm.userInfo = userInfo;
                 editUsersListCellForm.Show();
+                this.Close();
             }
         }
 

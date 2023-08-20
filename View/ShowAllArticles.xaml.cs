@@ -62,6 +62,7 @@ namespace SchuhLadenApp.View
                 EditArticleInfo editArticleInfo = new EditArticleInfo(articleInfo);
                 editArticleInfo.articleInfo = articleInfo;
                 editArticleInfo.Show();
+                this.Close();
             }
         }
 
