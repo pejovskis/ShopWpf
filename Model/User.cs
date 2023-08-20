@@ -53,7 +53,6 @@ namespace SchuhLadenApp.Model
             this.Lohngehalt = lohngehalt;
             this.UserStatus = userStatus;
             this.account = account;
-            this.password = password;
         }
         public User(string name, string vorname, string strasse, string hausnummer, int plz, string anstellungszeit, double lohngehalt, string userStatus, string password, string account)
         {

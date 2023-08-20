@@ -5,32 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchuhLadenApp"
         mc:Ignorable="d"
-        Title="AddNewUserPanel" Height="700" Width="800">
-    <Grid Margin="0,0,0,-6">
+        Title="AddNewUserPanel" Height="800" Width="1200">
+    <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Label Content="Name:"/>
-            <TextBox x:Name="tbxName"/>
-            <Label Content="Vorname:"/>
-            <TextBox x:Name="tbxFirstname"/>
-            <Label Content="Hausnummer:"/>
-            <TextBox x:Name="tbxHousenum"/>
-            <Label Content="Straße:"/>
-            <TextBox x:Name="tbxStreet"/>
-            <Label Content="Anstellungszeit:"/>
-            <TextBox x:Name="tbxEmployedOn"/>
-            <Label Content="Plz:"/>
-            <TextBox x:Name="tbxPostcode"/>
-            <Label Content="Lohngehalt:"/>
-            <TextBox x:Name="tbxSalary"/>
-            <Label Content="Userstatus:"/>
-            <TextBox x:Name="tbxUserstatus"/>
-            <Label Content="Account:"/>
-            <TextBox x:Name="tbxAccount"/>
-            <Label Content="Password:"/>
-            <TextBox x:Name="tbxPassword"/>
-            <Button x:Name="btnAddNewUser" Content="Add New User" Click="btnAddNewUser_Click"/>
-            <Button x:Name="btnBack" Content="Back" Click="btnBack_Click"/>
-            <Label x:Name="lblStatus"/>
+            <!-- Labels and TextBoxes -->
+            <Label Content="Name:" FontSize="15" HorizontalAlignment="Center" />
+            <TextBox x:Name="tbxName" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <Label Content="Vorname:" FontSize="15" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbxFirstname" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <Label Content="Hausnummer:" FontSize="15" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbxHousenum" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <Label Content="Straße:" FontSize="15" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbxStreet" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <Label Content="Anstellungszeit:" FontSize="15" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbxEmployedOn" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <Label Content="Plz:" FontSize="15" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbxPostcode" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <Label Content="Lohngehalt:" FontSize="15" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbxSalary" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <Label Content="Userstatus:" FontSize="15" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbxUserstatus" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <Label Content="Account:" FontSize="15" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbxAccount" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <Label Content="Password:" FontSize="15" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbxPassword" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
+            <!-- Buttons -->
+            <Button x:Name="btnAddNewUser" FontSize="20" Content="Add New User" Click="btnAddNewUser_Click" Padding="20,1,20,1" Margin="5">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1FF2F7" Offset="0"/>
+                        <GradientStop Color="#FF1FF2F7" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.514"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnBack" FontSize="20" Content="Back" Click="btnBack_Click" Padding="20,1,20,1" Margin="5">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF71F1F" Offset="0"/>
+                        <GradientStop Color="#FFF71F1F" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.514"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label x:Name="lblStatus" Margin="15"/>
         </StackPanel>
     </Grid>
 </Window>

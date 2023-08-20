@@ -5,24 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchuhLadenApp"
         mc:Ignorable="d"
-        Title="ShowUsersPanel" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="gridShowUsers">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="UserId" Binding="{Binding UserId}"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Vorname" Binding="{Binding Vorname}"/>
-                <DataGridTextColumn Header="Strasse" Binding="{Binding Strasse}"/>
-                <DataGridTextColumn Header="Hausnummer" Binding="{Binding Hausnummer}"/>
-                <DataGridTextColumn Header="Plz" Binding="{Binding Plz}"/>
-                <DataGridTextColumn Header="Anstellungszeit" Binding="{Binding Anstellungszeit}"/>
-                <DataGridTextColumn Header="Lohngehalt" Binding="{Binding Lohngehalt}"/>
-                <DataGridTextColumn Header="Userstatus" Binding="{Binding Userstatus}"/>
-                <DataGridTextColumn Header="Account" Binding="{Binding Account}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="btnEditUser" Content="edit" HorizontalAlignment="Left" Margin="743,391,0,0" VerticalAlignment="Top" Click="btnEditUser_Click"/>
-        <Button x:Name="btnBack" Content="back" HorizontalAlignment="Left" Margin="26,386,0,0" VerticalAlignment="Top" Click="btnBack_Click"/>
-
-    </Grid>
+        Title="ShowUsersPanel" Height="800" Width="1200">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <DataGrid x:Name="gridShowUsers" FontSize="15 px" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="UserId" Binding="{Binding UserId}" Width="*"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="Vorname" Binding="{Binding Vorname}" Width="*"/>
+                    <DataGridTextColumn Header="Strasse" Binding="{Binding Strasse}" Width="*"/>
+                    <DataGridTextColumn Header="Hausnummer" Binding="{Binding Hausnummer}" Width="*"/>
+                    <DataGridTextColumn Header="Plz" Binding="{Binding Plz}" Width="*"/>
+                    <DataGridTextColumn Header="Anstellungszeit" Binding="{Binding Anstellungszeit}" Width="*"/>
+                    <DataGridTextColumn Header="Lohngehalt" Binding="{Binding Lohngehalt}" Width="*"/>
+                    <DataGridTextColumn Header="Userstatus" Binding="{Binding Userstatus}" Width="*"/>
+                    <DataGridTextColumn Header="Account" Binding="{Binding Account}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <DockPanel DockPanel.Dock="Bottom">
+            <Button x:Name="btnBack" FontSize="20 px" Content="back" DockPanel.Dock="Left" VerticalAlignment="Bottom" Click="btnBack_Click" Width="100">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF71F1F" Offset="0"/>
+                        <GradientStop Color="#FFF71F1F" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.514"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnEditUser" FontSize="20 px" Content="edit" DockPanel.Dock="Right" VerticalAlignment="Bottom" Click="btnEditUser_Click" Width="100" HorizontalAlignment="Right">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1FF2F7" Offset="0"/>
+                        <GradientStop Color="#FF1FF2F7" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.514"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </DockPanel>
+    </DockPanel>
 </Window>

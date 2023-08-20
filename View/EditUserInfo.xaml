@@ -6,9 +6,33 @@
         xmlns:local="clr-namespace:SchuhLadenApp"
         mc:Ignorable="d"
         Title="EditUserInfo" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="gridEditUsercell" ItemsSource="{Binding Users}" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,291"></DataGrid>
-        <Button x:Name="btnSave" Content="update user" HorizontalAlignment="Left" Margin="476,0,0,0" VerticalAlignment="Center" Click="btnSave_Click_1"/>
-        <Button x:Name="btnBack" Content="back" HorizontalAlignment="Left" Margin="272,212,0,0" VerticalAlignment="Top" Click="btnBack_Click_1"/>
-    </Grid>
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <DataGrid x:Name="gridEditUsercell" ItemsSource="{Binding Users}" SelectionChanged="DataGrid_SelectionChanged" FontSize="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <DataGrid.Columns>
+                    <!-- Define your DataGrid columns here -->
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <DockPanel DockPanel.Dock="Bottom">
+            <Button x:Name="btnBack" FontSize="20" Content="back" DockPanel.Dock="Left" VerticalAlignment="Bottom" Click="btnBack_Click_1" Width="100">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF71F1F" Offset="0"/>
+                        <GradientStop Color="#FFF71F1F" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.514"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnSave" FontSize="20" Content="update user" DockPanel.Dock="Right" VerticalAlignment="Bottom" Click="btnSave_Click_1" Width="200" HorizontalAlignment="Right">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1FF2F7" Offset="0"/>
+                        <GradientStop Color="#FF1FF2F7" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.514"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </DockPanel>
+    </DockPanel>
 </Window>
