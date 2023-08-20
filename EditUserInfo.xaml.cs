@@ -48,24 +48,7 @@ namespace SchuhLadenApp
                 Account = userInfo[9]
             });
 
-            DataContext = this; // Add this line
-            generateUserGridView();
-        }
-
-        public void generateUserGridView()
-        {
-            // Create columns
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Userid", IsReadOnly = true });
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Name" });
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Vorname" });
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Strasse" });
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Hausnummer" });
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Plz" });
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Anstellungszeit" });
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Lohngehalt" });
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Userstatus" });
-            gridEditUsercell.Columns.Add(new DataGridTextColumn { Header = "Account" });
-
+            DataContext = this;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
