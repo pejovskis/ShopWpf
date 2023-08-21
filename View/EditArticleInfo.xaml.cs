@@ -53,7 +53,7 @@ namespace SchuhLadenApp.View
 
         }
 
-        private Artikel getUserInfo(dynamic row)
+        private Article getUserInfo(dynamic row)
         {
             string ArticleId = row.ArticleId;
             string Name = row.Name;
@@ -61,17 +61,17 @@ namespace SchuhLadenApp.View
             double Price = Convert.ToDouble(row.Price);
             int Quantity = Convert.ToInt32(row.Quantity);
 
-            Artikel article = new Artikel(ArticleId, Name, Lieferant, Price, Quantity);
+            Article article = new Article(ArticleId, Name, Lieferant, Price, Quantity);
 
             return article;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             if (Articles.Count > 0)
             {
                 ArticleInformation articleInformation = Articles[0];
-                Artikel article = new Artikel(
+                Article article = new Article(
                     articleInformation.ArticleId,
                     articleInformation.Name,
                     articleInformation.Supplier,
@@ -79,8 +79,8 @@ namespace SchuhLadenApp.View
                     Convert.ToInt32(articleInformation.Quantity)
                 );
 
-                article.updateArticle();
-                MessageBox.Show("Article " + article.getName() + " updated successfully!");
+                article.UpdateArticle();
+                MessageBox.Show("Article " + article.GetName() + " updated successfully!");
             }
             var showAllArticles = new ShowAllArticles();
             showAllArticles.Show();

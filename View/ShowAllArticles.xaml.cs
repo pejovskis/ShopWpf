@@ -36,7 +36,7 @@ namespace SchuhLadenApp.View
         private void generateArticleGridView()
         {
 
-            List<ArticleViewModel> articleList = Artikel.retrieveArtikelFromDb().Select(a => new ArticleViewModel(a)).ToList();
+            List<ArticleViewModel> articleList = Article.RetrieveArticleFromDB().Select(a => new ArticleViewModel(a)).ToList();
 
             gridArticleView.Items.Clear();
             foreach (ArticleViewModel articleViewModel in articleList)

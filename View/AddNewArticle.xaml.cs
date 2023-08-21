@@ -16,24 +16,22 @@ namespace SchuhLadenApp.View
             InitializeComponent();
         }
 
-        private void btnAddNewUser_Click(object sender, RoutedEventArgs e)
+        private void btnAddNewArticle_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                string name = tbxName.Text;
-                string supplier = tbxSupplier.Text;
-                double price = Convert.ToDouble(tbxPrice.Text);
-                int quantity = Convert.ToInt32(tbxQuantity.Text);
+                string Name = tbxName.Text;
+                string Supplier = tbxSupplier.Text;
+                double Price = Convert.ToDouble(tbxPrice.Text);
+                int Quantity = Convert.ToInt32(tbxQuantity.Text);
 
                 DatabaseHelper databaseHelper = new DatabaseHelper();
 
                 databaseHelper.OpenConnection();
 
-                Artikel newArticle = new Artikel(name, supplier, price, quantity);
+                Article NewArticle = new Article(Name, Supplier, Price, Quantity);
 
-                newArticle.setArtikelId(newArticle.CalculateArtikelId());
-
-                newArticle.addNewArtikel();
+                NewArticle.AddNewArticle();
                 lblStatus.Visibility = Visibility.Visible;
                 lblStatus.Foreground = new SolidColorBrush(Colors.Green);
                 lblStatus.Content = "Article succesfully added!";
@@ -48,7 +46,7 @@ namespace SchuhLadenApp.View
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            AdminMenu adminMenu = new AdminMenu();
+            var adminMenu = new AdminMenu();
             adminMenu.Show();
             this.Close();
         }

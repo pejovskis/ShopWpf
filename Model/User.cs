@@ -12,116 +12,96 @@ namespace SchuhLadenApp.Model
     {
 
         private string UserId;
-        private string Name;
-        private string Vorname;
-        private string Strasse;
-        private string Hausnummer;
-        private int Plz;
-        private string Adresse;
-        private string Anstellungszeit;
-        private double Lohngehalt;
+        private string LastName;
+        private string FirstName;
+        private string Street;
+        private string HouseNo;
+        private int Postcode;
+        private string DateOfEmployment;
+        private double Salary;
         private string UserStatus;
-        private string account;
-        private string password;
+        private string Account;
+        private string Password;
 
         // Constructor
         public User() { }
-        public User(string UserId, string name, string vorname, string strasse, string hausnummer, int plz, string anstellungszeit, double lohngehalt, string userStatus, string password, string account)
+        public User(string UserId, string LastName, string FirstName, string Street, string HouseNo,
+            int Postcode, string DateOfEmployment, double Salary, string UserStatus, string Password, string Account)
         {
             this.UserId = UserId;
-            this.Name = name;
-            this.Vorname = vorname;
-            this.Strasse = strasse;
-            this.Hausnummer = hausnummer;
-            this.Plz = plz;
-            this.Anstellungszeit = anstellungszeit;
-            this.Lohngehalt = lohngehalt;
-            this.UserStatus = userStatus;
-            this.account = account;
-            this.password = password;
+            this.LastName = LastName;
+            this.FirstName = FirstName;
+            this.Street = Street;
+            this.HouseNo = HouseNo;
+            this.Postcode = Postcode;
+            this.DateOfEmployment = DateOfEmployment;
+            this.Salary = Salary;
+            this.UserStatus = UserStatus;
+            this.Account = Account;
+            this.Password = Password;
         }
 
-        public User(string UserId, string name, string vorname, string strasse, string hausnummer, int plz, string anstellungszeit, double lohngehalt, string userStatus, string account)
+        public User(string UserId, string LastName, string FirstName, string Street, string HouseNo, 
+            int Postcode, string DateOfEmployment, double Salary, string UserStatus, string Account)
         {
             this.UserId = UserId;
-            this.Name = name;
-            this.Vorname = vorname;
-            this.Strasse = strasse;
-            this.Hausnummer = hausnummer;
-            this.Plz = plz;
-            this.Anstellungszeit = anstellungszeit;
-            this.Lohngehalt = lohngehalt;
-            this.UserStatus = userStatus;
-            this.account = account;
+            this.LastName = LastName;
+            this.FirstName = FirstName;
+            this.Street = Street;
+            this.HouseNo = HouseNo;
+            this.Postcode = Postcode;
+            this.DateOfEmployment = DateOfEmployment;
+            this.Salary = Salary;
+            this.UserStatus = UserStatus;
+            this.Account = Account;
         }
-        public User(string name, string vorname, string strasse, string hausnummer, int plz, string anstellungszeit, double lohngehalt, string userStatus, string password, string account)
+        public User(string LastName, string FirstName, string Street, string HouseNo, 
+            int Postcode, string DateOfEmployment, double Salary, string UserStatus, string Password, string Account)
         {
-            this.Name = name;
-            this.Vorname = vorname;
-            this.Strasse = strasse;
-            this.Hausnummer = hausnummer;
-            this.Plz = plz;
-            this.Anstellungszeit = anstellungszeit;
-            this.Lohngehalt = lohngehalt;
-            this.UserStatus = userStatus;
-            this.account = account;
-            this.password = password;
+            this.LastName = LastName;
+            this.FirstName = FirstName;
+            this.Street = Street;
+            this.HouseNo = HouseNo;
+            this.Postcode = Postcode;
+            this.DateOfEmployment = DateOfEmployment;
+            this.Salary = Salary;
+            this.UserStatus = UserStatus;
+            this.Account = Account;
+            this.Password = Password;
         }
-        public User(string UserId, string name, string vorname, string strasse, string hausnummer, int plz, string anstellungszeit, double lohngehalt, string userStatus)
+        public User(string UserId, string LastName, string FirstName, string Street, string HouseNo, 
+            int Postcode, string DateOfEmployment, double Salary, string UserStatus)
         {
             this.UserId = UserId;
-            this.Name = name;
-            this.Vorname = vorname;
-            this.Strasse = strasse;
-            this.Hausnummer = hausnummer;
-            this.Plz = plz;
-            this.Anstellungszeit = anstellungszeit;
-            this.Lohngehalt = lohngehalt;
-            this.UserStatus = userStatus;
+            this.LastName = LastName;
+            this.FirstName = FirstName;
+            this.Street = Street;
+            this.HouseNo = HouseNo;
+            this.Postcode = Postcode;
+            this.DateOfEmployment = DateOfEmployment;
+            this.Salary = Salary;
+            this.UserStatus = UserStatus;
         }
-        public User(string name, string vorname, string strasse, string hausnummer, int plz, string anstellungszeit, double lohngehalt, string userStatus)
+        public User(string LastName, string FirstName, string Street, string HouseNo, int Postcode,
+            string DateOfEmployment, double Salary, string UserStatus)
         {
-            this.Name = name;
-            this.Vorname = vorname;
-            this.Strasse = strasse;
-            this.Hausnummer = hausnummer;
-            this.Plz = plz;
-            this.Anstellungszeit = anstellungszeit;
-            this.Lohngehalt = lohngehalt;
-            this.UserStatus = userStatus;
+            this.LastName = LastName;
+            this.FirstName = FirstName;
+            this.Street = Street;
+            this.HouseNo = HouseNo;
+            this.Postcode = Postcode;
+            this.DateOfEmployment = DateOfEmployment;
+            this.Salary = Salary;
+            this.UserStatus = UserStatus;
         }
-        public User(string account, string password)
+        public User(string Account, string Password)
         {
-            this.account = account;
-            this.password = password;
-        }
-
-        // Calculate the User ID
-        public string CalculateUserId()
-        {
-
-            string teilOne;
-            string teilTwo;
-            string teilThree;
-            string teilFour;
-            string teilFive;
-
-            string AnstellungsZeitToString = this.Anstellungszeit.ToString();
-
-            teilOne = this.Name.Substring(0, 2);
-            teilTwo = this.Vorname.Substring(0, 2);
-            teilThree = this.Strasse.Substring(0, 2);
-            teilFour = this.UserStatus.Substring(0, 2);
-            teilFive = AnstellungsZeitToString.Substring(0, 8);
-
-            string UserId = teilOne + teilTwo + teilThree + teilFour + teilFive;
-
-            return UserId;
-
+            this.Account = Account;
+            this.Password = Password;
         }
 
         // Retrieve all users from the DB 
-        public static List<User> retrieveUsersFromDb()
+        public static List<User> RetrieveUsersFromDB()
         {
 
             List<User> users = new List<User>();
@@ -139,19 +119,20 @@ namespace SchuhLadenApp.Model
 
                         while (reader.Read())
                         {
-                            string userId = reader.GetString(0);
-                            string name = reader.GetString(1);
-                            string vorname = reader.GetString(2);
-                            string strasse = reader.GetString(3);
-                            string hausnummer = reader.GetString(4);
-                            int plz = reader.GetInt32(5);
-                            string anstellungszeit = reader.GetString(6);
-                            double lohngehalt = reader.GetDouble(7);
-                            string userstatus = reader.GetString(8);
-                            string password = reader.GetString(9);
-                            string account = reader.GetString(10);
+                            string UserId = reader.GetString(0);
+                            string LastName = reader.GetString(1);
+                            string FirstName = reader.GetString(2);
+                            string Street = reader.GetString(3);
+                            string HouseNo = reader.GetString(4);
+                            int Postcode = reader.GetInt32(5);
+                            string DateOfEmployment = reader.GetString(6);
+                            double Salary = reader.GetDouble(7);
+                            string UserStatus = reader.GetString(8);
+                            string Password = reader.GetString(9);
+                            string Account = reader.GetString(10);
 
-                            User newUser = new User(userId, name, vorname, strasse, hausnummer, plz, anstellungszeit, lohngehalt, userstatus, password, account);
+                            User newUser = new User(UserId, LastName, FirstName, Street, HouseNo, Postcode, 
+                                DateOfEmployment, Salary, UserStatus, Password, Account);
 
                             users.Add(newUser);
 
@@ -166,9 +147,9 @@ namespace SchuhLadenApp.Model
         }
 
         // Iterate through the list and check if the userID exists
-        public bool checkIfUserExists()
+        public bool CheckIfUserExists()
         {
-            List<User> users = retrieveUsersFromDb();
+            List<User> users = RetrieveUsersFromDB();
 
             foreach (User user in users)
             {
@@ -183,28 +164,29 @@ namespace SchuhLadenApp.Model
         }
 
         // Add new User to the DB
-        public void addNewUser()
+        public void AddNewUser()
         {
             DatabaseHelper databaseHelper = new DatabaseHelper();
 
             using (SqliteConnection connection = databaseHelper.OpenConnection())
             {
-                string query = "INSERT INTO user(userid, name, vorname, strasse, hausnummer, plz, anstellungszeit, lohngehalt, userstatus, password, account) " +
-                    "VALUES (@userid, @name, @vorname, @strasse, @hausnummer, @plz, @anstellungszeit, @lohngehalt, @userstatus, @password, @account) ";
+                string query = "INSERT INTO user(lastname, firstname, street, houseno, postcode, " +
+                    "dateofemployment, salary, userstatus, account, password) " +
+                    "VALUES (@LastName, @FirstName, @Street, @HouseNo, @Postcode, " +
+                    "@DateOfEmployment, @Salary, @UserStatus, @Account, @Password) ";
 
                 using (SqliteCommand command = new SqliteCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@userid", this.getUserId());
-                    command.Parameters.AddWithValue("@name", this.getName());
-                    command.Parameters.AddWithValue("@vorname", this.getVorname());
-                    command.Parameters.AddWithValue("@strasse", this.getStrasse());
-                    command.Parameters.AddWithValue("@hausnummer", this.getHausnummer());
-                    command.Parameters.AddWithValue("@plz", this.getPlz());
-                    command.Parameters.AddWithValue("@anstellungszeit", this.getAnstellungsZeit());
-                    command.Parameters.AddWithValue("@lohngehalt", this.getLohnGehalt());
-                    command.Parameters.AddWithValue("@userstatus", this.getUserStatus());
-                    command.Parameters.AddWithValue("@password", this.getPassword());
-                    command.Parameters.AddWithValue("@account", this.getAccount());
+                    command.Parameters.AddWithValue("@LastName", this.LastName);
+                    command.Parameters.AddWithValue("@FirstName", this.FirstName);
+                    command.Parameters.AddWithValue("@Street", this.Street);
+                    command.Parameters.AddWithValue("@HouseNo", this.HouseNo);
+                    command.Parameters.AddWithValue("@Postcode", this.Postcode);
+                    command.Parameters.AddWithValue("@DateOfEmployment", this.DateOfEmployment);
+                    command.Parameters.AddWithValue("@Salary", this.Salary);
+                    command.Parameters.AddWithValue("@UserStatus", this.UserStatus);
+                    command.Parameters.AddWithValue("@Account", this.Account);
+                    command.Parameters.AddWithValue("@Password", this.Password);
 
                     command.ExecuteNonQuery(); // Execute the INSERT query
                 }
@@ -212,28 +194,29 @@ namespace SchuhLadenApp.Model
             }
         }
 
-        public void updateUser()
+        public void UpdateUser()
         {
             DatabaseHelper databaseHelper = new DatabaseHelper();
 
             using (SqliteConnection connection = databaseHelper.OpenConnection())
             {
-                string query = "UPDATE user SET name=@name, vorname=@vorname, strasse=@strasse, hausnummer=@hausnummer," +
-                    "plz=@plz, anstellungszeit=@anstellungszeit, lohngehalt=@lohngehalt, userstatus=@userstatus, account=@account " +
-                    "WHERE userid=@userid";
+                string query = "UPDATE user SET lastname=@LastName, firstname=@FirstName, street=@Street, houseno=@HouseNo," +
+                    "postcode=@Postcode, dateofemployment=@DateOfEmployment, salary=@Salary, userstatus=@UserStatus, " +
+                    "account=@Account " +
+                    "WHERE userid=@Userid";
 
                 using (SqliteCommand command = new SqliteCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@userid", this.getUserId());
-                    command.Parameters.AddWithValue("@name", this.getName());
-                    command.Parameters.AddWithValue("@vorname", this.getVorname());
-                    command.Parameters.AddWithValue("@strasse", this.getStrasse());
-                    command.Parameters.AddWithValue("@hausnummer", this.getHausnummer());
-                    command.Parameters.AddWithValue("@plz", this.getPlz());
-                    command.Parameters.AddWithValue("@anstellungszeit", this.getAnstellungsZeit());
-                    command.Parameters.AddWithValue("@lohngehalt", this.getLohnGehalt());
-                    command.Parameters.AddWithValue("@userstatus", this.getUserStatus());
-                    command.Parameters.AddWithValue("@account", this.getAccount());
+                    command.Parameters.AddWithValue("@Userid", this.UserId);
+                    command.Parameters.AddWithValue("@LastName", this.LastName);
+                    command.Parameters.AddWithValue("@FirstName", this.FirstName);
+                    command.Parameters.AddWithValue("@Street", this.Street);
+                    command.Parameters.AddWithValue("@HouseNo", this.HouseNo);
+                    command.Parameters.AddWithValue("@Postcode", this.Postcode);
+                    command.Parameters.AddWithValue("@DateOfEmployment", this.DateOfEmployment);
+                    command.Parameters.AddWithValue("@Salary", this.Salary);
+                    command.Parameters.AddWithValue("@UserStatus", this.UserStatus);
+                    command.Parameters.AddWithValue("@Account", this.Account);
 
                     command.ExecuteNonQuery(); // Execute the INSERT query
                 }
@@ -241,40 +224,33 @@ namespace SchuhLadenApp.Model
             }
         }
 
-        // Check userId and return the user if it exists in the db
-        public User getExistingUser(string userIdInput)
+        // Check UserId and return the user if it exists in the db
+        public User GetExistingUser(string UserId)
         {
-            Console.WriteLine("Aufgerufen");
-            List<User> users = retrieveUsersFromDb();
+            List<User> users = RetrieveUsersFromDB();
 
             foreach (User user in users)
             {
 
-                if (user.getUserId() == userIdInput)
+                if (user.UserId == UserId)
                 {
 
                     return user;
                 }
             }
 
-            /* string input = tbxInput2.Text.ToString();
-
-       User user = new User().getExistingUser(input);
-
-       tbxTestInput.Text = user.ToString();*/
-
             return null;
         }
 
         // Log in Check
-        public bool checkUserCredentials(string account, string password)
+        public bool CheckUserCredentials(string Account, string Password)
         {
 
-            List<User> users = retrieveUsersFromDb();
+            List<User> users = RetrieveUsersFromDB();
 
             foreach (User user in users)
             {
-                if (user.account == account && user.password == password)
+                if (user.Account == Account && user.Password == Password)
                 {
                     return true;
                 }
@@ -283,34 +259,34 @@ namespace SchuhLadenApp.Model
             return false;
         }
 
-        public User getFullUserCredentials(string account, string password)
+        public User GetFullUserCredentials(string Account, string Password)
         {
             DatabaseHelper databaseHelper = new DatabaseHelper();
 
             using (SqliteConnection connection = databaseHelper.OpenConnection())
             {
-                string query = "SELECT * FROM user WHERE account=@account AND password=@password";
+                string query = "SELECT * FROM user WHERE Account=@Account AND Password=@Password";
 
                 using (SqliteCommand command = new SqliteCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@account", account);
-                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@Account", Account);
+                    command.Parameters.AddWithValue("@Password", Password);
 
                     using (SqliteDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            string userId = reader.GetString(0);
-                            string name = reader.GetString(1);
-                            string vorname = reader.GetString(2);
-                            string strasse = reader.GetString(3);
-                            string hausnummer = reader.GetString(4);
-                            int plz = reader.GetInt32(5);
-                            string anstellungszeit = reader.GetString(6);
-                            double lohngehalt = reader.GetDouble(7);
-                            string userstatus = reader.GetString(8);
+                            string UserId = reader.GetString(0);
+                            string LastName = reader.GetString(1);
+                            string FirstName = reader.GetString(2);
+                            string Street = reader.GetString(3);
+                            string HouseNo = reader.GetString(4);
+                            int Postcode = reader.GetInt32(5);
+                            string DateOfEmployment = reader.GetString(6);
+                            double Salary = reader.GetDouble(7);
+                            string UserStatus = reader.GetString(8);
 
-                            User user = new User(userId, name, vorname, strasse, hausnummer, plz, anstellungszeit, lohngehalt, userstatus, password, account);
+                            User user = new User(UserId, LastName, FirstName, Street, HouseNo, Postcode, DateOfEmployment, Salary, UserStatus, Password, Account);
 
                             return user;
                         }
@@ -322,142 +298,125 @@ namespace SchuhLadenApp.Model
             return null;
         }
 
-
-        public void setUserId(string userId)
-        {
-            this.UserId = userId;
-        }
-
-        public string getUserId()
+        public string GetUserId()
         {
             return this.UserId;
         }
 
-        public string getName()
+        public string GetLastName()
         {
-            return this.Name;
+            return this.LastName;
         }
 
-        public string getVorname()
+        public string GetFirstName()
         {
-            return this.Vorname;
+            return this.FirstName;
         }
 
-        public string getStrasse()
+        public string GetStreet()
         {
-            return this.Strasse;
+            return this.Street;
         }
 
-        public int getPlz()
+        public int GetPostcode()
         {
-            return this.Plz;
+            return this.Postcode;
         }
 
-        public string getHausnummer()
+        public string GetHouseNo()
         {
-            return this.Hausnummer;
+            return this.HouseNo;
         }
 
-        public string getAdresse()
+        public string GetDateOfEmployment()
         {
-            return this.Adresse;
+            return this.DateOfEmployment;
         }
 
-        public string getAnstellungsZeit()
+        public double GetSalary()
         {
-            return this.Anstellungszeit;
+            return this.Salary;
         }
 
-        public double getLohnGehalt()
-        {
-            return this.Lohngehalt;
-        }
-
-        public string getUserStatus()
+        public string GetUserStatus()
         {
             return this.UserStatus;
         }
 
-        public string getAccount()
+        public string GetAccount()
         {
-            return this.account;
+            return this.Account;
         }
 
-        public string getPassword()
+        public string GetPassword()
         {
-            return this.password;
+            return this.Password;
         }
 
-        public void setName(string Name)
+        public void SetLastName(string LastName)
         {
-            this.Name = Name;
+            this.LastName = LastName;
         }
 
-        public void setVorname(string Vorname)
+        public void SetFirstName(string FirstName)
         {
-            this.Vorname = Vorname;
+            this.FirstName = FirstName;
         }
 
-        public void setHausnummer(string Hausnummer)
+        public void SetHouseNo(string HouseNo)
         {
-            this.Hausnummer = Hausnummer;
+            this.HouseNo = HouseNo;
         }
 
-        public void setStrasse(string Strasse)
+        public void SetStreet(string Strasse)
         {
-            this.Strasse = Strasse;
+            this.Street = Strasse;
         }
 
-        public void setPlz(int plz)
+        public void SetPostcode(int Postcode)
         {
-            this.Plz = plz;
+            this.Postcode = Postcode;
         }
 
-        public string concatinateAdresse()
+        public void SetDateOfEmployment(string DateOfEmployment)
         {
-            return this.Adresse = Strasse + " " + this.Hausnummer + " " + this.Plz;
+            this.DateOfEmployment = DateOfEmployment;
         }
 
-        public void setAnstellungsZeit(string AnstellungsZeit)
+        public void SetSalary(double Salary)
         {
-            this.Anstellungszeit = AnstellungsZeit;
+            this.Salary = Salary;
         }
 
-        public void setLohnGehalt(double LohnGehalt)
-        {
-            this.Lohngehalt = LohnGehalt;
-        }
-
-        public void setUserStatus(string UserStatus)
+        public void SetUserStatus(string UserStatus)
         {
             this.UserStatus = UserStatus;
         }
 
-        public void setPassword(string password)
+        public void SetPassword(string Password)
         {
-            this.password = password;
+            this.Password = Password;
         }
 
-        public void setAccount(string account)
+        public void SetAccount(string Account)
         {
-            this.account = account;
+            this.Account = Account;
         }
 
         override
         public string ToString()
         {
             return this.UserId + " " +
-            this.Name + " " +
-            this.Vorname + " " +
-            this.Strasse + " " +
-            this.Hausnummer + " " +
-            this.Plz + " " +
-            this.Adresse + " " +
-            this.Anstellungszeit + " " +
-            this.Lohngehalt + " " +
+            this.LastName + " " +
+            this.FirstName + " " +
+            this.Street + " " +
+            this.HouseNo + " " +
+            this.Postcode + " " +
+            this.DateOfEmployment + " " +
+            this.Salary + " " +
             this.UserStatus + " " +
-            this.account + " " +
-            this.password;
+            this.Account + " " +
+            this.Password;
         }
 
     }

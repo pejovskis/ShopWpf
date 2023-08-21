@@ -37,7 +37,7 @@ namespace WpfApp1
             string password = tbxPassword.Password;
 
             User user = new User(username, password);
-            bool logInApproved = user.checkUserCredentials(username, password);
+            bool logInApproved = user.CheckUserCredentials(username, password);
 
             if (!logInApproved)
             {
@@ -46,7 +46,7 @@ namespace WpfApp1
             }
             else
             {
-                LoggedInUser = user.getFullUserCredentials(username, password);
+                LoggedInUser = user.GetFullUserCredentials(username, password);
                 AdminMenu adminMenu = new AdminMenu();
                 adminMenu.Show();
                 this.Close();

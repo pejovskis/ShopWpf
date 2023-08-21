@@ -33,7 +33,7 @@ namespace SchuhLadenApp.View
         private void generateUserGridView()
         {
 
-            List<UserViewModel> userList = User.retrieveUsersFromDb().Select(u => new UserViewModel(u)).ToList();
+            List<UserViewModel> userList = User.RetrieveUsersFromDB().Select(u => new UserViewModel(u)).ToList();
 
             gridShowUsers.Items.Clear();
             foreach (UserViewModel userViewModel in userList)

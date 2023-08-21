@@ -30,27 +30,25 @@ namespace SchuhLadenApp.View
         {
             try
             {
-                string name = tbxName.Text;
-                string firstName = tbxFirstname.Text;
-                string street = tbxStreet.Text;
-                string housenum = tbxHousenum.Text;
-                int postcode = Convert.ToInt32(tbxPostcode.Text);
-                string employedOn = tbxEmployedOn.Text;
-                double salary = Convert.ToDouble(tbxSalary.Text);
-                string userstatus = tbxUserstatus.Text;
-                string account = tbxAccount.Text;
-                string password = tbxPassword.Text;
+                string LastName = tbxName.Text;
+                string FirstName = tbxFirstname.Text;
+                string Street = tbxStreet.Text;
+                string HouseNo = tbxHousenum.Text;
+                int Postcode = Convert.ToInt32(tbxPostcode.Text);
+                string DateOfEmployment = tbxEmployedOn.Text;
+                double Salary = Convert.ToDouble(tbxSalary.Text);
+                string UserStatus = tbxUserstatus.Text;
+                string Account = tbxAccount.Text;
+                string Password = tbxPassword.Text;
 
                 DatabaseHelper databaseHelper = new DatabaseHelper();
 
                 databaseHelper.OpenConnection();
 
-                User newUser = new User(name, firstName, street, housenum, postcode,
-                    employedOn, salary, userstatus, password, account);
+                User newUser = new User(LastName, FirstName, Street, HouseNo, Postcode,
+                    DateOfEmployment, Salary, UserStatus, Password, Account);
 
-                newUser.setUserId(newUser.CalculateUserId());
-
-                newUser.addNewUser();
+                newUser.AddNewUser();
                 lblStatus.Visibility = Visibility.Visible;
                 lblStatus.Foreground = new SolidColorBrush(Colors.Green);
                 lblStatus.Content = "User succesfully added!";
@@ -65,7 +63,7 @@ namespace SchuhLadenApp.View
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            AdminMenu adminMenu = new AdminMenu();
+            var adminMenu = new AdminMenu();
             adminMenu.Show();
             this.Close();
         }

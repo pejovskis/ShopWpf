@@ -25,22 +25,18 @@ namespace SchuhLadenApp.View
             InitializeComponent();
             if (MainWindow.LoggedInUser != null)
             {
-                lblLoggedInUser.Content = MainWindow.LoggedInUser.getName();
-                if(MainWindow.LoggedInUser.getUserStatus() != "admin")
+                lblLoggedInUser.Content = MainWindow.LoggedInUser.GetLastName();
+                if(MainWindow.LoggedInUser.GetUserStatus() != "admin")
                 {
                     btnAddNewArticle.Visibility = Visibility.Hidden;
                     btnAddNewUser.Visibility = Visibility.Hidden;
                 }
             }
-            else
-            {
-                lblLoggedInUser.Content = "Not logged in";
-            }
         }
 
         private void btnShowAllUsers_Click(object sender, RoutedEventArgs e)
         {
-            ShowUsersPanel showUsersPanel = new ShowUsersPanel();
+            var showUsersPanel = new ShowUsersPanel();
             showUsersPanel.Show();
             this.Close();
         }
@@ -48,21 +44,21 @@ namespace SchuhLadenApp.View
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.LoggedInUser = null;
-            MainWindow mainWindow = new MainWindow();
+            var mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
         }
 
         private void btnAddNewUser_Click(object sender, RoutedEventArgs e)
         {
-            AddNewUserPanel addNewUserPanel = new AddNewUserPanel();
+            var addNewUserPanel = new AddNewUserPanel();
             addNewUserPanel.Show();
             this.Close();
         }
 
         private void btnShowAllArticles_Click(object sender, RoutedEventArgs e)
         {
-            ShowAllArticles showAllArticles = new ShowAllArticles();
+            var showAllArticles = new ShowAllArticles();
             showAllArticles.Show();
             this.Close();
         }

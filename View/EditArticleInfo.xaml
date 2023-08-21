@@ -25,7 +25,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="btnSave" FontSize="20" Content="save" DockPanel.Dock="Right" VerticalAlignment="Bottom" Click="Button_Click" Width="100" HorizontalAlignment="Right">
+            <Button x:Name="btnSave" FontSize="20" Content="save" DockPanel.Dock="Right" VerticalAlignment="Bottom" Click="btnSave_Click" Width="100" HorizontalAlignment="Right">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF1FF2F7" Offset="0"/>

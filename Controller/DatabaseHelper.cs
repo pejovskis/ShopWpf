@@ -10,7 +10,7 @@ namespace SchuhLadenApp.Controller
     internal class DatabaseHelper
     {
 
-        string connectionString = "Data Source=schuhappdb.db";
+        string connectionString = "Data Source=storeapp.db";
 
         public SqliteConnection OpenConnection()
         {

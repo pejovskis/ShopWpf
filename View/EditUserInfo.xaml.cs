@@ -71,19 +71,12 @@ namespace SchuhLadenApp.View
             return user;
         }
 
-        private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-            ShowUsersPanel showUsersPanel = new ShowUsersPanel();
-            showUsersPanel.Show();
-            this.Close();
-        }
-
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void btnSave_Click_1(object sender, RoutedEventArgs e)
+        private void btnUpdateUser_Click(object sender, RoutedEventArgs e)
         {
             if (Users.Count > 0)
             {
@@ -101,19 +94,20 @@ namespace SchuhLadenApp.View
                     userInformation.Account
                 );
 
-                user.updateUser();
-                MessageBox.Show("User " + user.getVorname() + " updated successfully!");
+                user.UpdateUser();
+                MessageBox.Show("User " + user.GetFirstName() + " updated successfully!");
             }
-            var showAllArticles = new ShowAllArticles();
-            showAllArticles.Show();
+            var showUsersPanel = new ShowUsersPanel();
+            showUsersPanel.Show();
             this.Close();
         }
 
-        private void btnBack_Click_1(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             var showAllUsers = new ShowUsersPanel();
             showAllUsers.Show();
             this.Close();
         }
+
     }
 }

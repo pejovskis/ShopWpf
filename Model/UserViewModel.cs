@@ -19,68 +19,67 @@ namespace SchuhLadenApp.Model
 
         public string UserId
         {
-            get { return _user.getUserId(); }
-            set { _user.setUserId(value); }
+            get { return _user.GetUserId(); }
         }
 
         public string Name
         {
-            get { return _user.getName(); }
-            set { _user.setName(value); }
+            get { return _user.GetLastName(); }
+            set { _user.SetLastName(value); }
         }
 
         public string Vorname
         {
-            get { return _user.getVorname(); }
-            set { _user.setVorname(value); }
+            get { return _user.GetFirstName(); }
+            set { _user.SetFirstName(value); }
         }
 
         public string Strasse
         {
-            get { return _user.getStrasse(); }
-            set { _user.setStrasse(value); }
+            get { return _user.GetStreet(); }
+            set { _user.SetStreet(value); }
         }
 
         public string Hausnummer
         {
-            get { return _user.getHausnummer(); }
-            set { _user.setHausnummer(value); }
+            get { return _user.GetHouseNo(); }
+            set { _user.SetHouseNo(value); }
         }
 
         public int Plz
         {
-            get { return _user.getPlz(); }
-            set { _user.setPlz(value); }
+            get { return _user.GetPostcode(); }
+            set { _user.SetPostcode(value); }
         }
 
         public string Anstellungszeit
         {
-            get { return _user.getAnstellungsZeit(); }
-            set { _user.setAnstellungsZeit(value); }
+            get { return _user.GetDateOfEmployment(); }
+            set { _user.SetDateOfEmployment(value); }
         }
 
         public double Lohngehalt
         {
-            get { return _user.getLohnGehalt(); }
-            set { _user.setLohnGehalt(value); }
+            get { return _user.GetSalary(); }
+            set { _user.SetSalary(value); }
         }
 
         public string UserStatus
         {
-            get { return _user.getUserStatus(); }
-            set { _user.setUserStatus(value); }
+            get { return _user.GetUserStatus(); }
+            set { _user.SetUserStatus(value); }
         }
 
         public string Account
         {
-            get { return _user.getAccount(); }
-            set { _user.setAccount(value); }
+            get { return _user.GetAccount(); }
+            set { _user.SetAccount(value); }
         }
 
         public string Password
         {
-            get { return _user.getPassword(); }
-            set { _user.setPassword(value); }
+            get { return _user.GetPassword(); }
+            set { _user.SetPassword(value); }
         }
 
     }

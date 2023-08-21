@@ -8,41 +8,40 @@ namespace SchuhLadenApp.Model
 {
     class ArticleViewModel
     {
-        private Artikel _artikel;
+        private Article _artikel;
 
-        public ArticleViewModel(Artikel artikel)
+        public ArticleViewModel(Article artikel)
         {
             _artikel = artikel;
         }
 
         public string ArtikelId
         {
-            get { return _artikel.getArtikelId(); }
-            set { _artikel.setArtikelId(value); }
+            get { return _artikel.GetArticleId(); }
         }
 
         public string Name
         {
-            get { return _artikel.getName(); }
-            set { _artikel.setName(value); }
+            get { return _artikel.GetName(); }
+            set { _artikel.SetName(value); }
         }
 
         public string Lieferant
         {
-            get { return _artikel.getLieferant(); }
-            set { _artikel.setLieferant(value); }
+            get { return _artikel.GetSupplier(); }
+            set { _artikel.SetSupplier(value); }
         }
 
         public double Preis
         {
-            get { return _artikel.getPreis(); }
-            set { _artikel.setPreis(value); }
+            get { return _artikel.GetPrice(); }
+            set { _artikel.SetPrice(value); }
         }
 
         public int Menge
         {
-            get { return _artikel.getMenge(); }
-            set { _artikel.setMenge(value); }
+            get { return _artikel.GetQuantity(); }
+            set { _artikel.SetQuantity(value); }
         }
     }
 }

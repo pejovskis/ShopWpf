@@ -37,15 +37,15 @@ namespace SchuhLadenApp.View
             string articleId = tbxArticleId.Text.ToString();
             int quantity = Convert.ToInt32(tbxQuantity.Text.ToString());
 
-            Artikel article = new Artikel();
+            Article article = new Article();
             article = article.getExistingArticle(articleId);
 
             if (article != null)
             {
-                if (article.getMenge() > quantity)
+                if (article.GetQuantity() >= quantity)
                 {
-                    article.sellArticle(quantity);
-                    MessageBox.Show("Article " + article.getName() + " sold. Quantity: " + article.getMenge());
+                    article.SellArticle(quantity);
+                    MessageBox.Show("Article " + article.GetName() + " sold. Quantity: " + article.GetQuantity());
                 }
                 else
                 {

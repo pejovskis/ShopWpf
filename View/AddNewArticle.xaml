@@ -18,7 +18,7 @@
             <Label Content="Quantity:" FontSize="15" HorizontalAlignment="Center"/>
             <TextBox x:Name="tbxQuantity" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
             <!-- Buttons -->
-            <Button x:Name="btnAddNewArticle" FontSize="20" Content="Add New Article" Click="btnAddNewUser_Click" Padding="20,1,20,1" Margin="5">
+            <Button x:Name="btnAddNewArticle" FontSize="20" Content="Add New Article" Click="btnAddNewArticle_Click" Padding="20,1,20,1" Margin="5">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF1FF2F7" Offset="0"/>
