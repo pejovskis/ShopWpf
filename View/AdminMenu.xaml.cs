@@ -69,6 +69,13 @@ namespace SchuhLadenApp.View
 
         private void btnAddNewArticle_Click(object sender, RoutedEventArgs e)
         {
+            var addnewArticle = new AddNewArticle();
+            addnewArticle.Show();
+            this.Close();
+        }
+
+        private void btnSellArticle_Click(object sender, RoutedEventArgs e)
+        {
             var sellArticle = new SellArticle();
             sellArticle.Show();
             this.Close();

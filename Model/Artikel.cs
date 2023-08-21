@@ -174,12 +174,11 @@ namespace SchuhLadenApp.Model
             }
         }
 
-        public void sellArticle(string ArtikelId)
+        public void sellArticle(int quantity)
         {
 
-            this.Menge--;
-
-            string menge = this.Menge.ToString();
+            this.Menge -= quantity;
+            string artikelId = this.ArtikelId;
 
             DatabaseHelper databaseHelper = new DatabaseHelper();
 
@@ -190,7 +189,8 @@ namespace SchuhLadenApp.Model
 
                 using (SqliteCommand command = new SqliteCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@menge", this.getMenge());
+                    command.Parameters.AddWithValue("@menge", this.Menge);
+                    command.Parameters.AddWithValue("@ArtikelId", this.ArtikelId);
 
                     command.ExecuteNonQuery(); // Execute the INSERT query
                 }

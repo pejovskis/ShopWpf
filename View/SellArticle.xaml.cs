@@ -32,22 +32,30 @@ namespace SchuhLadenApp.View
             this.Close();
         }
 
-        private void btnAddNewUser_Click(object sender, RoutedEventArgs e)
+        private void btnSellArticle_Click(object sender, RoutedEventArgs e)
         {
-            string articleId = tbxArticleId.Text;
+            string articleId = tbxArticleId.Text.ToString();
+            int quantity = Convert.ToInt32(tbxQuantity.Text.ToString());
 
             Artikel article = new Artikel();
+            article = article.getExistingArticle(articleId);
 
-            article.getExistingArticle(articleId);
-
-            if(article.getMenge() > 0)
+            if (article != null)
             {
-                article.sellArticle(articleId);
-            } else
-            {
-                MessageBox.Show("Article sold out");
+                if (article.getMenge() > quantity)
+                {
+                    article.sellArticle(quantity);
+                    MessageBox.Show("Article " + article.getName() + " sold. Quantity: " + article.getMenge());
+                }
+                else
+                {
+                    MessageBox.Show("Article is sold out. Or quantity out of stock. Please update the database if the quantity is already changed.");
+                }
             }
-
+            else
+            {
+                MessageBox.Show("Invalid ArticleID");
+            }
         }
     }
 }
