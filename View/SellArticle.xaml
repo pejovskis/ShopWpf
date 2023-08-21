@@ -7,14 +7,13 @@
         mc:Ignorable="d"
         Title="AddNewArticle" Height="450" Width="800">
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="117,21,0,0" Width="339">
             <!-- Labels and TextBoxes -->
             <Label Content="Article ID" FontSize="15" HorizontalAlignment="Center"/>
             <TextBox x:Name="tbxArticleId" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
             <Label Content="Quantity:" FontSize="15" HorizontalAlignment="Center"/>
             <TextBox x:Name="tbxQuantity" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
-            <!-- Buttons -->
-            <Button x:Name="btnSellArticle" FontSize="20" Content="Sell Article" Click="btnSellArticle_Click" Padding="20,1,20,1" Margin="5">
+            <Button x:Name="btnAddToCheck" FontSize="20" Content="Add" Click="btnSellArticle_Click" Padding="20,1,20,1">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF1FF2F7" Offset="0"/>
@@ -23,7 +22,17 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="btnBack" FontSize="20" Content="Back" Click="btnBack_Click" Padding="20,1,20,1" Margin="5">
+            <!-- Buttons -->
+            <Button x:Name="btnSellArticle" FontSize="20" Content="Sell Article" Click="btnSellArticle_Click" Padding="20,1,20,1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1FF2F7" Offset="0"/>
+                        <GradientStop Color="#FF1FF2F7" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.514"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnBack" FontSize="20" Content="Back" Click="btnBack_Click" Padding="20,1,20,1">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFF71F1F" Offset="0"/>
@@ -32,7 +41,16 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Label x:Name="lblStatus" Margin="15"/>
+            <Label x:Name="lblStatus"/>
         </StackPanel>
+        <DataGrid Margin="472,10,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Article ID" Binding="{Binding ArtikelId}" Width="*"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Supplier" Binding="{Binding Lieferant}" Width="*"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Preis}" Width="*"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Menge}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
