@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Xml.Linq;
 using WpfApp1;
 
 namespace SchuhLadenApp.Controller
@@ -193,6 +195,93 @@ namespace SchuhLadenApp.Controller
                 MessageBox.Show("Invalid ArticleID");
             }
         }
+
+        // Add New User Panel
+        public static void AddNewUser(TextBox tbxName, TextBox tbxFirstname, TextBox tbxStreet,
+            TextBox tbxHousenum, TextBox tbxPostcode, TextBox tbxEmployedOn, TextBox tbxSalary,
+            TextBox tbxUserstatus, TextBox tbxAccount, TextBox tbxPassword, Label lblStatus)
+        {
+            try
+            {
+                string LastName = tbxName.Text;
+                string FirstName = tbxFirstname.Text;
+                string Street = tbxStreet.Text;
+                string HouseNo = tbxHousenum.Text;
+                int Postcode = Convert.ToInt32(tbxPostcode.Text);
+                string DateOfEmployment = tbxEmployedOn.Text;
+                double Salary = Convert.ToDouble(tbxSalary.Text);
+                string UserStatus = tbxUserstatus.Text;
+                string Account = tbxAccount.Text;
+                string Password = tbxPassword.Text;
+
+                DatabaseHelper databaseHelper = new DatabaseHelper();
+
+                databaseHelper.OpenConnection();
+
+                User newUser = new User(LastName, FirstName, Street, HouseNo, Postcode,
+                    DateOfEmployment, Salary, UserStatus, Password, Account);
+
+                newUser.AddNewUser();
+                lblStatus.Visibility = Visibility.Visible;
+                lblStatus.Foreground = new SolidColorBrush(Colors.Green);
+                lblStatus.Content = "User succesfully added!";
+            }
+            catch (Exception ex)
+            {
+                lblStatus.Visibility = Visibility.Visible;
+                lblStatus.Foreground = new SolidColorBrush(Colors.Red);
+                lblStatus.Content = ex.Message + " Failed to add new User! User Already Exists.";
+            }
+        }
+
+        public static void AddNewUserBackBtn(Window window)
+        {
+            var adminMenu = new AdminMenu();
+            adminMenu.Show();
+            window.Close();
+        }
+
+        // Add New Article Panel
+        public static void AddNewArticle(TextBox tbxPrice, TextBox tbxQuantity, TextBox tbxName, TextBox tbxSupplier,
+               Label lblStatus)
+        {
+            try
+            {
+                string Name = tbxName.Text;
+                string Supplier = tbxSupplier.Text;
+                double Price = Convert.ToDouble(tbxPrice.Text);
+                int Quantity = Convert.ToInt32(tbxQuantity.Text);
+
+                DatabaseHelper databaseHelper = new DatabaseHelper();
+
+                databaseHelper.OpenConnection();
+
+                Article NewArticle = new Article(Name, Supplier, Price, Quantity);
+
+                NewArticle.AddNewArticle();
+                lblStatus.Visibility = Visibility.Visible;
+                lblStatus.Foreground = new SolidColorBrush(Colors.Green);
+                lblStatus.Content = "Article succesfully added!";
+            }
+            catch (Exception ex)
+            {
+                lblStatus.Visibility = Visibility.Visible;
+                lblStatus.Foreground = new SolidColorBrush(Colors.Red);
+                lblStatus.Content = ex.Message + " Failed to add new Article! Article Already Exists.";
+            }
+        }
+
+        public static void AddNewArticleBackBtn(Window window)
+        {
+            var adminMenu = new AdminMenu();
+            adminMenu.Show();
+            window.Close();
+        }
+
+        // Edit Article Info
+
+
+        // Eidt User Info
 
 
 

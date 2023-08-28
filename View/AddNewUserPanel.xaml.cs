@@ -28,44 +28,14 @@ namespace SchuhLadenApp.View
 
         private void btnAddNewUser_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                string LastName = tbxName.Text;
-                string FirstName = tbxFirstname.Text;
-                string Street = tbxStreet.Text;
-                string HouseNo = tbxHousenum.Text;
-                int Postcode = Convert.ToInt32(tbxPostcode.Text);
-                string DateOfEmployment = tbxEmployedOn.Text;
-                double Salary = Convert.ToDouble(tbxSalary.Text);
-                string UserStatus = tbxUserstatus.Text;
-                string Account = tbxAccount.Text;
-                string Password = tbxPassword.Text;
-
-                DatabaseHelper databaseHelper = new DatabaseHelper();
-
-                databaseHelper.OpenConnection();
-
-                User newUser = new User(LastName, FirstName, Street, HouseNo, Postcode,
-                    DateOfEmployment, Salary, UserStatus, Password, Account);
-
-                newUser.AddNewUser();
-                lblStatus.Visibility = Visibility.Visible;
-                lblStatus.Foreground = new SolidColorBrush(Colors.Green);
-                lblStatus.Content = "User succesfully added!";
-            }
-            catch (Exception ex)
-            {
-                lblStatus.Visibility = Visibility.Visible;
-                lblStatus.Foreground = new SolidColorBrush(Colors.Red);
-                lblStatus.Content = ex.Message + " Failed to add new User! User Already Exists.";
-            }
+            MainController.AddNewUser(tbxName, tbxFirstname, tbxStreet,
+                tbxHousenum, tbxPostcode, tbxEmployedOn, tbxSalary,
+                tbxUserstatus, tbxAccount, tbxPassword, lblStatus);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            var adminMenu = new AdminMenu();
-            adminMenu.Show();
-            this.Close();
+            MainController.AddNewUserBackBtn(this);
         }
     }
 }
