@@ -3,12 +3,9 @@ using SchuhLadenApp.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Xml.Linq;
 using WpfApp1;
 
 namespace SchuhLadenApp.Controller
@@ -279,9 +276,20 @@ namespace SchuhLadenApp.Controller
         }
 
         // Edit Article Info
-
+        public static void EditArticleInfoBackBtn(Window window)
+        {
+            var showAllArticles = new ShowAllArticles();
+            showAllArticles.Show();
+            window.Close();
+        }
 
         // Eidt User Info
+        public static void EditUserInfoBackBtn(Window window)
+        {
+            var showAllUsers = new ShowUsersPanel();
+            showAllUsers.Show();
+            window.Close();
+        }
 
 
 

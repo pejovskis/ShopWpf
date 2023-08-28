@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SchuhLadenApp.Controller;
 using SchuhLadenApp.Model;
 
 namespace SchuhLadenApp.View
@@ -89,9 +90,7 @@ namespace SchuhLadenApp.View
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            var showAllArticles = new ShowAllArticles();
-            showAllArticles.Show();
-            this.Close();
+            MainController.EditArticleInfoBackBtn(this);
         }
     }
 }

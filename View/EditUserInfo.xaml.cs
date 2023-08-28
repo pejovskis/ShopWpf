@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using SchuhLadenApp.Controller;
 using SchuhLadenApp.Model;
 
 namespace SchuhLadenApp.View
@@ -104,9 +105,7 @@ namespace SchuhLadenApp.View
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            var showAllUsers = new ShowUsersPanel();
-            showAllUsers.Show();
-            this.Close();
+            MainController.EditUserInfoBackBtn(this);
         }
 
     }
