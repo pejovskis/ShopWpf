@@ -9,11 +9,11 @@ namespace SchuhLadenApp.Model
     internal class Article
     {
 
-        private string ArticleId;
-        private string Name;
-        private string Supplier;
-        private double Price;
-        private int Quantity;
+        public string ArticleId { get; set; }
+        public string Name { get; set; }
+        public string Supplier { get; set; }
+        public double Price { get; set; }
+        public int Quantity { get; set; }
 
         public Article() { }
         public Article(string ArticleId, string Name, string Supplier, double Price, int Quantity)
@@ -30,6 +30,11 @@ namespace SchuhLadenApp.Model
             this.Supplier = Supplier;
             this.Price = Price;
             this.Quantity = Quantity;
+        }
+
+        public Article(string ArticleId)
+        {
+            this.ArticleId = ArticleId;
         }
 
         public static List<Article> RetrieveArticleFromDB()
@@ -69,6 +74,45 @@ namespace SchuhLadenApp.Model
             }
 
             return articles;
+        }
+
+        public static Article RetrieveInfosFromArticleFromDB(String ArticleId)
+        {
+
+            DatabaseHelper databaseHelper = new DatabaseHelper();
+
+            Article article = null;
+
+
+            using (SqliteConnection connection = databaseHelper.OpenConnection())
+            {
+                string query = "SELECT * FROM article WHERE articleid = @ArticleId";
+
+                using (SqliteCommand command = new SqliteCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@ArticleId", ArticleId);
+
+                    using (SqliteDataReader reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+                            string Name = reader.GetString(1);
+                            string Supplier = reader.GetString(2);
+                            double Price = reader.GetDouble(3);
+                            int Quantity = reader.GetInt32(4);
+
+                            article = new Article(ArticleId, Name, Supplier, Price, Quantity);
+
+                        }
+
+                    }
+                }
+                databaseHelper.CloseConnection(connection);
+            }
+
+            return article;
         }
 
         public bool CheckIfArticleExists()
@@ -215,6 +259,15 @@ namespace SchuhLadenApp.Model
         public int GetQuantity()
         {
             return this.Quantity;
+        }
+
+        override
+        public string ToString()
+        {
+            return this.ArticleId + " " +
+            this.Name + " " +
+            this.Supplier + " " +
+            this.Quantity + " ";
         }
     }
 }

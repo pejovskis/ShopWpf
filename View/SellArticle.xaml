@@ -13,7 +13,7 @@
             <TextBox x:Name="tbxArticleId" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
             <Label Content="Quantity:" FontSize="15" HorizontalAlignment="Center"/>
             <TextBox x:Name="tbxQuantity" FontSize="15" Margin="5" BorderThickness="0,0,0,1"/>
-            <Button x:Name="btnAddToCheck" FontSize="20" Content="Add" Click="btnSellArticle_Click" Padding="20,1,20,1">
+            <Button x:Name="btnAddToCheck" FontSize="20" Content="Add" Click="btnAddArticle_Click" Padding="20,1,20,1">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF1FF2F7" Offset="0"/>
@@ -43,14 +43,6 @@
             </Button>
             <Label x:Name="lblStatus"/>
         </StackPanel>
-        <DataGrid Margin="472,10,0,10">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Article ID" Binding="{Binding ArtikelId}" Width="*"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
-                <DataGridTextColumn Header="Supplier" Binding="{Binding Lieferant}" Width="*"/>
-                <DataGridTextColumn Header="Price" Binding="{Binding Preis}" Width="*"/>
-                <DataGridTextColumn Header="Quantity" Binding="{Binding Menge}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <DataGrid x:Name="GridSellArticles" ItemsSource="{Binding articleList}" Margin="472,10,0,10"></DataGrid>
     </Grid>
 </Window>
