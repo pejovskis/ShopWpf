@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1;
 using SchuhLadenApp.Model;
+using SchuhLadenApp.Controller;
 
 namespace SchuhLadenApp.View
 {
@@ -25,52 +26,17 @@ namespace SchuhLadenApp.View
         {
             InitializeComponent();
             DataContext = this;
-            generateArticleGridView();
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void generateArticleGridView()
-        {
-
-            List<ArticleViewModel> articleList = Article.RetrieveArticleFromDB().Select(a => new ArticleViewModel(a)).ToList();
-
-            gridArticleView.Items.Clear();
-            foreach (ArticleViewModel articleViewModel in articleList)
-            {
-                gridArticleView.Items.Add(articleViewModel);
-            }
+            MainController.GenerateArticleGridView(gridArticleView);
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            if (gridArticleView.SelectedItems.Count > 0)
-            {
-                ArticleViewModel selectedArticle = (ArticleViewModel)gridArticleView.SelectedItems[0];
-                List<string> articleInfo = new List<string>
-            {
-                selectedArticle.ArtikelId,
-                selectedArticle.Name,
-                selectedArticle.Lieferant,
-                selectedArticle.Preis.ToString(),
-                selectedArticle.Menge.ToString()
-            };
-
-                EditArticleInfo editArticleInfo = new EditArticleInfo(articleInfo);
-                editArticleInfo.articleInfo = articleInfo;
-                editArticleInfo.Show();
-                this.Close();
-            }
+            MainController.ShowArticleBtnEdit(this, gridArticleView);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            AdminMenu adminMenu = new AdminMenu();
-            adminMenu.Show();
-            this.Close();
+            MainController.ShowArticleBtnBack(this);
         }
 
         private void gridArticleView_SelectionChanged(object sender, SelectionChangedEventArgs e)

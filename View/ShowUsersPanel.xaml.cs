@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1;
 using SchuhLadenApp.Model;
+using SchuhLadenApp.Controller;
 
 namespace SchuhLadenApp.View
 {
@@ -27,62 +28,18 @@ namespace SchuhLadenApp.View
         {
             InitializeComponent();
             DataContext = this;
-            generateUserGridView();
-        }
-
-        private void generateUserGridView()
-        {
-
-            List<UserViewModel> userList = User.RetrieveUsersFromDB().Select(u => new UserViewModel(u)).ToList();
-
-            gridShowUsers.Items.Clear();
-            foreach (UserViewModel userViewModel in userList)
-            {
-                gridShowUsers.Items.Add(userViewModel);
-            }
-        }
-
-        private void gridShowUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            MainController.GenerateUserGridView(gridShowUsers);
         }
 
         private void btnEditUser_Click(object sender, RoutedEventArgs e)
         {
-            if (gridShowUsers.SelectedItems.Count > 0)
-            {
-                UserViewModel selectedUser = (UserViewModel)gridShowUsers.SelectedItems[0];
-                List<string> userInfo = new List<string>
-            {
-                selectedUser.UserId,
-                selectedUser.Name,
-                selectedUser.Vorname,
-                selectedUser.Strasse,
-                selectedUser.Hausnummer,
-                selectedUser.Plz.ToString(),
-                selectedUser.Anstellungszeit,
-                selectedUser.Lohngehalt.ToString(),
-                selectedUser.UserStatus,
-                selectedUser.Account
-            };
-
-                EditUserInfo editUsersListCellForm = new EditUserInfo(userInfo);
-                editUsersListCellForm.userInfo = userInfo;
-                editUsersListCellForm.Show();
-                this.Close();
-            }
+           MainController.EditUser(this, gridShowUsers);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            AdminMenu adminMenu = new AdminMenu();
-            adminMenu.Show();
-            this.Close();
+            MainController.AdminMenuBtnBack(this);
         }
 
-        private void gridShowUsers_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
